@@ -1,0 +1,215 @@
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="10dp"
+    android:background="#FFFFFF"
+    android:textAlignment="center"
+    tools:context=".MainActivity">
+
+    <!-- BMI Calculator text -->
+    <TextView
+        android:id="@+id/textBMI"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="BMI Calculator"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"/>
+
+    <!-- Unit selection -->
+    <RadioGroup
+        android:id="@+id/unitSelection"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/textBMI"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp">
+
+        <RadioButton
+            android:id="@+id/rbUSC"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="USC (lbs/in)"
+            android:checked="true"/>
+
+        <RadioButton
+            android:id="@+id/rbMetric"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Metric (kg/m)"/>
+    </RadioGroup>
+
+    <!-- Weight -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardWeight"
+        android:layout_width="302dp"
+        android:layout_height="156dp"
+        android:background="#009688"
+        android:backgroundTint="#009688"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="10dp"
+        app:layout_constraintTop_toBottomOf="@+id/unitSelection"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textWeight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Weight"
+                android:textColor="#FFFFFF"
+                android:textSize="35sp"
+                android:textStyle="bold"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginStart="16dp"/>
+
+            <EditText
+                android:id="@+id/numberWeight"
+                android:layout_width="180dp"
+                android:layout_height="81dp"
+                android:ems="10"
+                android:hint="0"
+                android:inputType="number"
+                android:textColor="#FFFFFF"
+                android:textSize="60sp"
+                app:layout_constraintStart_toEndOf="@+id/textWeight"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginStart="16dp"/>
+
+            <TextView
+                android:id="@+id/textWeightUnit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="lbs"
+                android:textColor="#FF9800"
+                android:textSize="25sp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/numberWeight"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginStart="8dp"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <!-- Height -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardHeight"
+        android:layout_width="302dp"
+        android:layout_height="156dp"
+        android:layout_marginTop="16dp"
+        app:cardBackgroundColor="#009688"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardWeight">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textHeight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Height"
+                android:textColor="#FFFFFF"
+                android:textSize="35sp"
+                android:textStyle="bold"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginStart="16dp"/>
+
+            <EditText
+                android:id="@+id/numberHeight"
+                android:layout_width="180dp"
+                android:layout_height="81dp"
+                android:ems="10"
+                android:hint="0"
+                android:inputType="number"
+                android:textColor="#FFFFFF"
+                android:textSize="60sp"
+                app:layout_constraintStart_toEndOf="@+id/textHeight"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginStart="16dp"/>
+
+            <TextView
+                android:id="@+id/textHeightUnit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="in"
+                android:textColor="#FF9800"
+                android:textSize="25sp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/numberHeight"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginStart="8dp"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <!-- Calculate BMI Button -->
+    <Button
+        android:id="@+id/btnCalculate"
+        android:layout_width="300dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="#CC8926"
+        android:elevation="10sp"
+        android:text="Calculate BMI"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:cornerRadius="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardHeight"/>
+
+    <!-- BMI Result -->
+    <TextView
+        android:id="@+id/textBMIResult"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="BMI:"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@+id/btnCalculate"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"/>
+
+    <!-- BMI Interpretation -->
+    <TextView
+        android:id="@+id/textBMIInterpretation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Interpretation:"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@+id/textBMIResult"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
